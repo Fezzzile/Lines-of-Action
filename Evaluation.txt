@@ -1,0 +1,17 @@
+Evaluation
+Your program will be marked entirely by hand.  (Some requirements can only be tested in this way.)
+
+You mark will be calculated as follows:
+
+50% programming style
+Is the program neatly and consistently indented?
+Are there unnecessary open lines?
+Are there too many comments?
+Are there too few comments?
+Do the variable names sensible?
+Does each function have a clearly stated purpose?
+50% hand marking
+Do you satisfy all of the requirements 100%?
+You will NOT be penalized for any errors that were already penalized in the midterm submission.  However, if these problems prevent your program from satisfying the new requirements, you will lose some marks.
+
+If, for example, your program does not complain if the command-line arguments are invalid, you have already lost marks for violating requirements R04, R05, R06, etc.  If however, your program ignores all command-line arguments (in other words, does not behave correctly when run with, e.g., $ java Loa 9 3), you will lose marks because we cannot check your requirements.

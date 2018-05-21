@@ -1,0 +1,13 @@
+Extra credit
+You are free to enhance your program in any way that you want, as long as it satisfies all of the requirements.  Some of the enhancements will necessarily break some of the requirements; use your common sense to judge when this is appropriate.  If there is any doubt, ask the instructor.  You will be penalized for breaking requirements when it was not necessary.  In particular , breaking requirement R06 would allow you to add more "modes" to your program that may not operate by the basic rules.  This is a sensible way to satisfy and go beyond the requirements, all at the same time.
+
+There is no fixed list of additional functionality that will earn you extra credit.  Your work will be judged subjectively.  Most importantly, you will not receive any extra credit if your basic functionality is not working.  In other words, do not waste your time implementing the features below if your program is still not 100% in compliance with the requirements.
+
+Examples of work that will earn extra credit is
+
+sound effects
+enhanced graphics & effects (such as animation)
+intelligent gameplay by the computer player (add a note in your source code in comments to explain how the player operates)
+not terminating at the end of a game, but allowing the user to choose whether to play again or to quit & keeping score of the number of games won/lost
+adding multiplayer mode to the graphical mode
+correct implementation of the original rule #10 of the game

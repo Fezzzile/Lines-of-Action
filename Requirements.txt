@@ -1,0 +1,155 @@
+Requirements
+Your program MUST satisfy ALL of the following requirements.
+
+R01: You MUST write one program that implements LOA. In the rest of this document, we shall assume that the program is named Loa.
+
+R02: Your program MUST operate in one three four modes: (a) test mode, (b) single-player mode, (c) multiplayer mode, (d) graphical mode.
+
+R03: It MUST be possible to run your program from the command-line:
+
+$ java Loa size mode option1 option2 ...
+R04: Your program MUST accept at least two command-line arguments.  If there are fewer than two arguments, your program must display the following and terminate immediately:
+
+$ java Loa 3
+ERROR: too few arguments
+R05: The first command-line argument MUST specify the size of the board.  This must be an integer from 4 to 16.  If the size is smaller than 4 or more than 16, your program must display the following and terminate immediately:
+
+$ java Loa 99 0
+ERROR: illegal size
+R06: Your program MUST complain and terminate immediately if the mode is something other than 0, 1, or 2 or 3.
+
+$ java Loa 9 9
+ERROR: illegal mode
+R07: If the second argument is 0, your program MUST operate in test mode.
+
+R08: If the second argument is 1, your program MUST operate in single-player mode.
+
+R09: If the second argument is 2, your program MUST operate in multiplayer mode.
+
+R10: If the second argument is 3, your program MUST operate in graphical mode.
+
+Test mode
+T01: In test mode, your program MUST repeatedly (1) display the current board position, (2) read a move, and (3) make the move.
+
+T02: Your program MUST read moves of the format XYZQ, where XY is the starting square for a piece, and ZQ is the destination square of the piece.
+
+T03: X must be the row name (A, B, C, ...), and Y must be the column name (A, B, C, ...).  The rows are named such that the first (southernmost) row is A, the next row is B, the next row is C, and so on.  The columns are named such that the left (westernmost) column is A, the next column is B, the next column is C, and so on.
+
+T04: Z MUST the be row name for the destination, and Q must be the column name for the destination.
+
+T05: Your program MUST allow one more additional command QUIT, which displays a message and terminates the program immediately.
+
+QUIT
+player quit
+T06: Your program MUST complain and terminate immediately is the move is not QUIT and is not a valid move, for whatever reason.
+
+...
+ZZZZ
+ERROR: invalid move
+$
+
+...
+AABB
+ERROR: invalid move
+$
+T07: If, after a move is made, one player has won, your program MUST display an appropriate message and terminate immediately.
+
+...
+ABCB
+WINNER: black
+$
+T08: If, after a move is made, the game is a draw, your program MUST display an appropriate message and terminate immediately.
+
+...
+ABBB
+DRAW
+$
+T09: Your program must display the current board position in exactly the same fashion as the following board:
+
+  A B C D E F G H
+H . B B B B B B .
+G W . . . . . . W
+F W . . . . . . W
+E W . . . . . . W
+D W . . . . . . W
+C W . . . . . . W
+B W . . . . . . W
+A . B B B B B B .
+The row names must be displayed on the left-hand side.  The column names must be displayed at the top.  The board must display either . or W or B.  Every displayed character must be followed by a space.
+
+T10: Your program MUST NOT display anything except for the outputs specified above.
+
+Single-player mode
+S01: Your program MAY display more output in this mode.
+
+S02: Your program MAY allow the user to choose to play either black or white, or it MAY pick a colour for the user random, or it MAY always assign the user to play black.
+
+S03: Your program MUST implement a computer player for the non-user colour.  It is sufficient if the computer player make a valid but random move every turn.  Your program MAY also implement more intelligent gameplay.
+
+S04: Your program MAY follow the same behaviour as in test mode, but it MUST NOT quit if the user enters an invalid move.  Instead, it MUST prompt the user to try to enter the move again.
+
+
+
+Multi-player mode
+M01: Your program MUST accept a third argument which is the IP address of the competing player.
+
+M02: Your program MUST complain if the third argument is missing.
+
+$ java Loa 8 2
+ERROR: too few arguments
+$ java Loa 8 2 192.168.1.100
+...
+M03: Your program MUST use the Networking.java library to communicate with the competing player.  Look at the source code of the library for more instructions on how to use it.
+
+M04: When your program has made a connection and it is in "server mode", it MUST send the board size over the network.
+
+M05: When your program has made a connection and it is in "client mode", it MUST read the board size from the network.
+
+M06: The program MUST allow the player in "client mode", to play black (i.e., first).
+
+M07: The program MUST allow the player in "server mode", to play white (i.e., second).
+
+M08: If it is the user's turn to move, the program MUST read a valid move from the standard input, and send it over the network.
+
+M09: If it is not the user's turn to move, the program MUST read a move from the network, and "execute" the move locally.
+
+M10: Moves MUST be read and written over the network in exactly the same XYZQ format described in T02.
+
+M11: If the user enters the move QUIT, your program MUST send it over the network, write a brief message, and terminate.
+
+M12: If your program reads the move QUIT, it MUST display a message to say that the other player has quit, and then terminate.
+
+
+
+Graphical mode
+G01: Your program MUST display a window on which the board is displayed as a rectangular array of squares.
+
+G02: Your program MUST colour the background of the squares alternately in a checkerboard pattern, like on a chessboard.
+
+G03: Your program MUST display the markers as white and black (or red) circles.
+
+G04: Your program MUST accept moves from the human player with mouse clicks.
+
+G05: Your program MAY allow the user to enter moves by dragging the mouse from the source square to the destination square.
+
+G06: Your program MAY allow the user to enter moves by clicking on the source square and then on the destination square.
+
+G07: Your program MUST implement either G05 or G06.
+
+G08: Your program MUST display an appropriate (graphical) message is the human move is invalid.
+
+G09: Your program MUST allow the human to re-enter their move until they enter a valid move.
+
+G10: If the human player cannot move (in other words, must pass) your program MUST display a message to this effect on the screen.
+
+G11: Your program DOES NOT have to animate the move; it can simply re-draw the board to reflect that the move has been executed.
+
+G12: In graphical mode, your program MUST operate as in single-player mode.  In other words, the opponent must be a computer player.  At the very least, the computer player's behaviour may be random.
+
+G13: Before every move, your program MUST indicate whose move it is, be writing this in a message area somewhere along the edge of the board, or drawing a (smaller) circle to indicate the colour to move next.
+
+G14: Once the game has been completed, your program MUST display an appropriate message (graphically) and terminate.
+
+G15: Your program MUST display a button somewhere along the edge of the board that allows the human player to resign the game immediately.
+
+G16: Your program MUST NOT display anything on the console/terminal.

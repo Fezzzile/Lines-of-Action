@@ -1,0 +1,18 @@
+Lines-of-action (LOA) is a two-player turn-based game invented by Claude Sourcie and described by Sid Sackson in his 1969 book A Gamut of Games. It is played on a square board of size NxN where N>3. Each player starts with 2(N-2) pieces, arranged at opposite sides of the board. The goal is to move the pieces so that they all touch.
+
+This project will implement terminal-based and graphical clients for LOA that allows two players to play via the network. Here is a screenshot of how the graphical client might end up looking:
+
+Basic rules of the game
+Your program will have to know and apply the rules of the game.  There are two players, black and white, just as in checkers.  Here are the ten rules:
+
+The black pieces are placed in two rows along the top and bottom of the board while the white pieces are placed in two columns at the left and right side of the board.  The four corner squares are left empty.
+The players alternately move, starting with Black.
+A player to move must move one of its pieces. A move takes place in a straight line (along rows, columns, or diagonals), exactly as many squares as there are pieces of either colour anywhere along the line of movement.
+A player may jump over its own pieces, but not land on them.
+A player may not jump over the opponent's pieces, but can capture them by landing on them.
+The goal of a player is to form one connected group with all of its pieces. The first player to do so is the winner. Connected pieces are on squares that are adjacent, either orthogonally or diagonally.
+A single piece is a connected group.
+If a move simultaneously creates a single connected unit for both players, it is a draw.
+If a player cannot move, this player has to pass.
+If a position with the same player to move occurs for the third time, the game is drawn.
+You may ignore rule 10 altogether.
